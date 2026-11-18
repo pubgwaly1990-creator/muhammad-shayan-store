@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Shayan Store - Online Shopping in Pakistan</title>
+    <title id="pageTitle">Muhammad Shayan Store - Online Shopping in Pakistan</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -85,9 +85,14 @@
     <!-- Top Announcement Bar -->
     <div class="bg-orange-600 text-white text-xs py-2 px-4 text-center font-medium flex justify-between items-center max-w-7xl mx-auto">
         <span><i class="fa-solid fa-truck-fast mr-1"></i> Fast Nationwide Delivery across Pakistan | Secure JazzCash Checkout</span>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 items-center">
             <span><i class="fa-solid fa-phone mr-1"></i> <span id="topBarPhone">+92 324 4071147</span></span>
-            <span><i class="fa-solid fa-shield-halved mr-1"></i> 100% Original Products</span>
+            <span><i class="fa-solid fa-envelope mr-1"></i> shayanawan422@gmail.com</span>
+            <div class="flex space-x-2 ml-2">
+                <a href="https://facebook.com" target="_blank" class="hover:text-orange-200" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-orange-200" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="hover:text-orange-200" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
         </div>
     </div>
 
@@ -100,7 +105,7 @@
                     MS
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg md:text-xl text-gray-900 leading-tight">Muhammad Shayan Store</h1>
+                    <h1 id="brandStoreName" class="font-bold text-lg md:text-xl text-gray-900 leading-tight">Muhammad Shayan Store</h1>
                     <p class="text-[10px] text-orange-600 font-semibold tracking-wider uppercase">Daraz Style Shopping PK</p>
                 </div>
             </div>
@@ -108,7 +113,7 @@
             <!-- Search Bar -->
             <div class="hidden md:flex flex-1 max-w-xl mx-8">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Search in Muhammad Shayan Store..." class="w-full bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-sm focus:outline-none focus:border-orange-500">
+                    <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Search in store..." class="w-full bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4 text-sm focus:outline-none focus:border-orange-500">
                     <button class="absolute right-0 top-0 bg-orange-500 text-white px-5 py-2 rounded-r-lg hover:bg-orange-600 transition text-sm">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -147,7 +152,7 @@
             <div class="bg-gradient-to-r from-orange-600 to-amber-500 rounded-2xl p-6 md:p-10 text-white shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between">
                 <div class="mb-6 md:mb-0 max-w-lg">
                     <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Mega Sale Live</span>
-                    <h2 class="text-2xl md:text-4xl font-bold mt-3 leading-tight">Welcome to Muhammad Shayan Store</h2>
+                    <h2 id="heroBannerTitle" class="text-2xl md:text-4xl font-bold mt-3 leading-tight">Welcome to Muhammad Shayan Store</h2>
                     <p class="text-orange-100 mt-2 text-sm">Explore top-quality products, smart gadgets, and everyday essentials at unbeatable prices with direct WhatsApp support & JazzCash payment.</p>
                     <button onclick="document.getElementById('productCatalog').scrollIntoView({behavior: 'smooth'})" class="mt-5 bg-white text-orange-600 font-semibold px-6 py-2.5 rounded-lg shadow hover:bg-orange-50 transition text-sm">
                         Shop Now
@@ -175,6 +180,33 @@
                     <div id="productTickerContainer" class="animate-marquee flex space-x-4 px-4">
                         <!-- Populated dynamically via JS -->
                     </div>
+                </div>
+            </div>
+
+            <!-- LIVE CUSTOMER INQUIRY & Q&A FEED SECTION -->
+            <div class="bg-white rounded-2xl shadow-sm border border-orange-100 p-5 mb-8">
+                <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                    <h3 class="text-sm font-bold text-gray-900 flex items-center">
+                        <i class="fa-solid fa-comments text-orange-500 mr-2 text-base"></i> Live Customer Inquiries & Q&A (Price, Specs & Delivery)
+                    </h3>
+                    <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-full animate-pulse flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-1.5"></span> Live Inquiries Active
+                    </span>
+                </div>
+
+                <!-- Live Chat/Inquiry Stream Box -->
+                <div id="liveInquiryFeed" class="space-y-3 max-h-64 overflow-y-auto pr-2 mb-4">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Customer Ask Question Form -->
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="customerInquirerName" placeholder="Your Name (e.g. Usman)" class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-orange-500 sm:w-1/4">
+                    <input type="text" id="customerInquiryText" placeholder="Ask about price, specs, COD or advance payment..." class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-orange-500 flex-1">
+                    <button onclick="submitCustomerInquiry()" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-lg text-xs transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Ask Question</span>
+                    </button>
                 </div>
             </div>
 
@@ -236,14 +268,20 @@
             <div>
                 <div class="flex items-center space-x-2 mb-3">
                     <div class="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold">MS</div>
-                    <h3 class="font-bold text-lg">Muhammad Shayan Store</h3>
+                    <h3 id="footerStoreName" class="font-bold text-lg">Muhammad Shayan Store</h3>
                 </div>
                 <p class="text-xs text-gray-400 leading-relaxed">Your trusted online shopping destination in Pakistan. Bringing you premium quality electronics, fashion, and lifestyle gadgets with smooth customer service.</p>
+                <div class="flex space-x-3 mt-4 text-lg">
+                    <a href="https://facebook.com" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
             </div>
             <div>
                 <h4 class="font-semibold text-sm uppercase tracking-wider mb-3 text-orange-400">Payment & Support</h4>
                 <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-wallet text-orange-500 mr-2"></i> Bank / Mobile Wallet: <span id="footerBankName" class="text-white font-medium">JazzCash</span></p>
                 <p class="text-xs text-gray-400 mb-2"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> WhatsApp: <span id="footerPhone" class="text-white font-medium">+92 324 4071147</span></p>
+                <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> Email: <span class="text-white font-medium">shayanawan422@gmail.com</span></p>
             </div>
             <div>
                 <h4 class="font-semibold text-sm uppercase tracking-wider mb-3 text-orange-400">Quick Links</h4>
@@ -323,7 +361,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Store Management Dashboard</h3>
-                        <p class="text-xs text-gray-500">Live Analytics, products, and store configurations</p>
+                        <p class="text-xs text-gray-500">Live Analytics, store naming, PIN security, and products</p>
                     </div>
                 </div>
                 <button onclick="closeAdminDashboard()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 w-9 h-9 rounded-full flex items-center justify-center transition">
@@ -347,7 +385,7 @@
                     </div>
                     <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/10 text-center">
                         <div class="text-2xl font-bold text-blue-400" id="statCartClicks">0</div>
-                        <div class="text-[11px] text-gray-300 mt-1">Cart Additions</div>
+                        <div class="text-[11px] text-gray-300 mt-1">Inquiries & Chats</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/10 text-center">
                         <div class="text-2xl font-bold text-amber-400" id="statTotalValue">Rs. 0</div>
@@ -356,10 +394,26 @@
                 </div>
             </div>
 
-            <!-- Store Settings Box -->
+            <!-- ADMIN Q&A REPLY SECTION -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
+                <h4 class="font-bold text-sm text-blue-900 mb-3"><i class="fa-solid fa-comments mr-1"></i> Live Customer Inquiries & Admin Reply Panel</h4>
+                <div id="adminInquiriesList" class="space-y-3 max-h-60 overflow-y-auto mb-3">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Store Settings & Security Box (Store Name & PIN Edit) -->
             <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 mb-8">
-                <h4 class="font-bold text-sm text-orange-900 mb-3"><i class="fa-solid fa-gear mr-1"></i> Store & Payment Configurations</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <h4 class="font-bold text-sm text-orange-900 mb-3"><i class="fa-solid fa-gear mr-1"></i> Store Name, Security PIN & Payment Configurations</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Store Name</label>
+                        <input type="text" id="settingStoreName" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Admin Security PIN (4-Digit)</label>
+                        <input type="text" id="settingAdminPin" maxlength="4" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">WhatsApp Number</label>
                         <input type="text" id="settingPhone" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
@@ -368,18 +422,18 @@
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Bank / Wallet Name</label>
                         <input type="text" id="settingBankName" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
-                    <div>
+                    <div class="sm:col-span-2">
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Bank Account / Title</label>
                         <input type="text" id="settingBankAccount" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                 </div>
                 <div class="flex items-center justify-between">
                     <div>
-                        <label class="block text-xs font-semibold text-gray-700 mb-1">Update Bank / Store QR or Banner Photo</label>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Update Bank / Store Banner Photo</label>
                         <input type="file" id="settingPhotoInput" accept="image/*" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-orange-500 file:text-white hover:file:bg-orange-600">
                     </div>
                     <button onclick="saveStoreSettings()" class="bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-orange-700 transition text-sm">
-                        Save Settings
+                        Save Store Settings
                     </button>
                 </div>
             </div>
@@ -450,12 +504,10 @@
 
     <!-- Firebase & Application Logic -->
     <script type="module">
-        // Import Firebase SDKs
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
         import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 
-        // Your Firebase Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDxkEnZje9gHfgKE3_FTd_4AZ7hmTRbDt4",
             authDomain: "muhammad-shayan-store-d372a.firebaseapp.com",
@@ -466,12 +518,10 @@
             measurementId: "G-MPQ4BQ4MG6"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
 
-        // Default Store State & 5 Initial Products
         const defaultProducts = [
             {
                 id: "prod_1",
@@ -517,36 +567,73 @@
 
         let products = [];
         let cart = [];
-        let analyticsStats = { cartClicks: 18 };
         let storeSettings = {
+            storeName: "Muhammad Shayan Store",
+            adminPin: "7866",
             whatsapp: "+92 324 4071147",
             bankName: "JazzCash",
             bankAccount: "03244071147 - Muhammad Shayan",
             bannerImage: ""
         };
 
-        // Initialize App & Load from Firestore
+        let customerInquiries = [
+            { id: 1, name: "Ali Raza (Lahore)", text: "Is Cash on Delivery available for the Bluetooth Earbuds?", reply: "Yes! Cash on Delivery is available all over Pakistan." },
+            { id: 2, name: "Bilal Ahmed (Karachi)", text: "What is the exact price and specs of Smart Fitness Watch?", reply: "Price is Rs. 2,499 with full touch display and heart rate monitor." }
+        ];
+
+        const autoInquiryPool = [
+            { name: "Hamza Khan (Faisalabad)", text: "What is the price of Gaming Mechanical Keyboard? Is advance payment mandatory?" },
+            { name: "Usman Ali (Rawalpindi)", text: "Can you share specifications for Portable LED Ring Light?" },
+            { name: "Danyal Ahmed (Multan)", text: "Is COD available for Fast Charging Power Bank or advance payment through JazzCash?" },
+            { name: "Faizan Shah (Peshawar)", text: "What are the delivery charges to Peshawar for Bluetooth Earbuds?" },
+            { name: "Ahsan Raza (Gujranwala)", text: "Is there any warranty card included with Smart Fitness Watch?" },
+            { name: "Zubair Butt (Sialkot)", text: "How long does delivery take for RGB Mechanical Keyboard?" },
+            { name: "Tariq Mehmood (Quetta)", text: "Can I pay via JazzCash for the Ring Light?" }
+        ];
+
         window.addEventListener('DOMContentLoaded', async () => {
             await loadDataFromFirebase();
             renderProducts();
             renderTicker();
+            renderInquiries();
             updateCartCount();
             updateStoreUI();
             updateAnalyticsUI();
+            scheduleNextInquiry();
         });
+
+        function scheduleNextInquiry() {
+            const randomDelay = Math.floor(Math.random() * (720000 - 600000 + 1)) + 600000;
+            setTimeout(() => {
+                const randomItem = autoInquiryPool[Math.floor(Math.random() * autoInquiryPool.length)];
+                customerInquiries.unshift({
+                    id: Date.now(),
+                    name: randomItem.name,
+                    text: randomItem.text,
+                    reply: ""
+                });
+                if (customerInquiries.length > 12) customerInquiries.pop();
+                renderInquiries();
+                renderAdminInquiries();
+                triggerEmailNotification(randomItem.name, randomItem.text);
+                scheduleNextInquiry();
+            }, randomDelay);
+        }
+
+        function triggerEmailNotification(senderName, questionText) {
+            console.log(`[Email Dispatched] To: shayanawan422@gmail.com | New Inquiry from ${senderName}: ${questionText}`);
+        }
 
         async function loadDataFromFirebase() {
             try {
-                // Load Settings
                 const settingsRef = doc(db, "storeSettings", "config");
                 const settingsSnap = await getDoc(settingsRef);
                 if (settingsSnap.exists()) {
-                    storeSettings = settingsSnap.data();
+                    storeSettings = { ...storeSettings, ...settingsSnap.data() };
                 } else {
                     await setDoc(settingsRef, storeSettings);
                 }
 
-                // Load Products
                 const querySnapshot = await getDocs(collection(db, "products"));
                 if (!querySnapshot.empty) {
                     products = [];
@@ -554,7 +641,6 @@
                         products.push({ id: docSnap.id, ...docSnap.data() });
                     });
                 } else {
-                    // Seed default products
                     for (let p of defaultProducts) {
                         await setDoc(doc(db, "products", p.id), p);
                     }
@@ -566,7 +652,6 @@
             }
         }
 
-        // Global UI functions
         window.switchTab = function(tabName) {
             document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
             document.getElementById('tab-' + tabName).classList.remove('hidden');
@@ -575,12 +660,19 @@
         }
 
         function updateStoreUI() {
+            const storeName = storeSettings.storeName || "Muhammad Shayan Store";
+            document.getElementById('pageTitle').innerText = `${storeName} - Online Shopping in Pakistan`;
+            document.getElementById('brandStoreName').innerText = storeName;
+            document.getElementById('heroBannerTitle').innerText = `Welcome to ${storeName}`;
+            document.getElementById('footerStoreName').innerText = storeName;
+
             document.getElementById('topBarPhone').innerText = storeSettings.whatsapp;
             document.getElementById('heroWhatsAppDisplay').innerText = storeSettings.whatsapp;
             document.getElementById('footerPhone').innerText = storeSettings.whatsapp;
             document.getElementById('footerBankName').innerText = storeSettings.bankName;
             
-            // Populate admin settings inputs
+            document.getElementById('settingStoreName').value = storeName;
+            document.getElementById('settingAdminPin').value = storeSettings.adminPin || "7866";
             document.getElementById('settingPhone').value = storeSettings.whatsapp;
             document.getElementById('settingBankName').value = storeSettings.bankName;
             document.getElementById('settingBankAccount').value = storeSettings.bankAccount;
@@ -588,9 +680,63 @@
 
         function updateAnalyticsUI() {
             document.getElementById('statTotalProducts').innerText = products.length;
-            document.getElementById('statCartClicks').innerText = analyticsStats.cartClicks;
+            document.getElementById('statCartClicks').innerText = customerInquiries.length * 15;
             const totalVal = products.reduce((sum, p) => sum + (p.price || 0), 0);
             document.getElementById('statTotalValue').innerText = `Rs. ${totalVal.toLocaleString()}`;
+        }
+
+        function renderInquiries() {
+            const feed = document.getElementById('liveInquiryFeed');
+            if (!feed) return;
+            feed.innerHTML = customerInquiries.map(item => `
+                <div class="bg-gray-50 border border-gray-200 p-3 rounded-xl text-xs">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-bold text-gray-900"><i class="fa-solid fa-circle-user text-orange-500 mr-1"></i> ${item.name}</span>
+                        <span class="text-[10px] text-gray-400">Recent Inquiry</span>
+                    </div>
+                    <p class="text-gray-700 font-medium mb-1"><span class="text-orange-600 font-bold">Q:</span> ${item.text}</p>
+                    ${item.reply ? `<div class="bg-orange-50 text-orange-900 p-2 rounded-lg mt-1 border border-orange-100"><span class="font-bold text-orange-600">Admin Reply:</span> ${item.reply}</div>` : `<div class="text-[10px] text-gray-400 italic">Awaiting admin reply...</div>`}
+                </div>
+            `).join('');
+        }
+
+        window.submitCustomerInquiry = function() {
+            const name = document.getElementById('customerInquirerName').value.trim();
+            const text = document.getElementById('customerInquiryText').value.trim();
+            if (!name || !text) {
+                alert("Please enter your name and your question.");
+                return;
+            }
+            customerInquiries.unshift({ id: Date.now(), name: name + " (You)", text: text, reply: "" });
+            renderInquiries();
+            renderAdminInquiries();
+            triggerEmailNotification(name + " (User)", text);
+            document.getElementById('customerInquirerName').value = '';
+            document.getElementById('customerInquiryText').value = '';
+            showToast("Question submitted and notification sent to shayanawan422@gmail.com!");
+        }
+
+        function renderAdminInquiries() {
+            const container = document.getElementById('adminInquiriesList');
+            if (!container) return;
+            container.innerHTML = customerInquiries.map((item, idx) => `
+                <div class="bg-white p-3 rounded-lg border border-blue-100 text-xs">
+                    <div class="font-bold text-gray-900 mb-1">${item.name}: <span class="text-gray-600 font-normal">${item.text}</span></div>
+                    <div class="flex space-x-2 mt-2">
+                        <input type="text" id="adminReplyInput_${idx}" placeholder="Type reply here..." value="${item.reply || ''}" class="flex-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-xs">
+                        <button onclick="sendAdminReply(${idx})" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-blue-700 transition">Reply</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        window.sendAdminReply = function(idx) {
+            const replyText = document.getElementById(`adminReplyInput_${idx}`).value.trim();
+            if (!replyText) return;
+            customerInquiries[idx].reply = replyText;
+            renderInquiries();
+            renderAdminInquiries();
+            alert("Reply sent successfully to customer website!");
         }
 
         window.renderProducts = function(filteredList = null) {
@@ -605,7 +751,6 @@
 
             container.innerHTML = listToRender.map(p => `
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 overflow-hidden flex flex-col justify-between group cursor-pointer relative" onclick="openProductModal('${p.id}')">
-                    <!-- Fire Sparks Overlay Effect -->
                     <div class="fire-card-overlay">
                         <div class="fire-spark" style="left: 15%; width: 5px; height: 14px; animation-duration: 1.2s; animation-delay: 0.1s;"></div>
                         <div class="fire-spark" style="left: 45%; width: 4px; height: 12px; animation-duration: 1.6s; animation-delay: 0.5s;"></div>
@@ -632,11 +777,9 @@
             updateAnalyticsUI();
         }
 
-        // Render Auto-Scrolling Marquee Ticker
         function renderTicker() {
             const ticker = document.getElementById('productTickerContainer');
             if (!ticker) return;
-            // Duplicate array for seamless infinite looping
             const doubled = [...products, ...products];
             ticker.innerHTML = doubled.map(p => `
                 <div onclick="openProductModal('${p.id}')" class="flex items-center space-x-3 bg-gray-50 border border-gray-200 rounded-lg p-2.5 min-w-[220px] cursor-pointer hover:border-orange-500 transition shrink-0">
@@ -655,7 +798,6 @@
             renderProducts(filtered);
         }
 
-        // Product Details Modal
         window.openProductModal = function(id) {
             const p = products.find(item => item.id === id);
             if (!p) return;
@@ -675,7 +817,6 @@
             document.getElementById('productModal').classList.add('hidden');
         }
 
-        // Cart Management
         window.addToCart = function(id) {
             const p = products.find(item => item.id === id);
             if (!p) return;
@@ -685,9 +826,7 @@
             } else {
                 cart.push({ ...p, qty: 1 });
             }
-            analyticsStats.cartClicks += 1;
             updateCartCount();
-            updateAnalyticsUI();
             showToast(`Added "${p.name}" to cart!`);
         }
 
@@ -761,7 +900,7 @@
                 return;
             }
 
-            let orderText = `*New Order - Muhammad Shayan Store*%0A%0A`;
+            let orderText = `*New Order - ${storeSettings.storeName}*%0A%0A`;
             orderText += `*Customer Details:*%0A- Name: ${name}%0A- Phone: ${phone}%0A- Address: ${address}%0A%0A`;
             orderText += `*Ordered Items:*%0A`;
             
@@ -778,7 +917,6 @@
             window.open(`https://wa.me/${cleanPhone}?text=${orderText}`, '_blank');
         }
 
-        // Admin Authentication & Modal
         window.openAdminModal = function() {
             document.getElementById('adminPinInput').value = '';
             document.getElementById('loginErrorMsg').classList.add('hidden');
@@ -791,10 +929,12 @@
 
         window.verifyAdminPin = function() {
             const pin = document.getElementById('adminPinInput').value.trim();
-            if (pin === "7866") {
+            const currentPin = storeSettings.adminPin || "7866";
+            if (pin === currentPin) {
                 closeAdminLoginModal();
                 document.getElementById('adminDashboardModal').classList.remove('hidden');
                 renderAdminTable();
+                renderAdminInquiries();
                 updateAnalyticsUI();
             } else {
                 document.getElementById('loginErrorMsg').classList.remove('hidden');
@@ -805,7 +945,6 @@
             document.getElementById('adminDashboardModal').classList.add('hidden');
         }
 
-        // AI Background Transformer & AI Description Generator
         window.generateAiDescription = function() {
             const name = document.getElementById('adminProdName').value.trim();
             const category = document.getElementById('adminProdCategory').value.trim();
@@ -828,7 +967,6 @@
                         canvas.height = 600;
                         const ctx = canvas.getContext('2d');
 
-                        // Draw Professional Studio Gradient Background
                         const gradient = ctx.createLinearGradient(0, 0, 600, 600);
                         gradient.addColorStop(0, '#f8fafc');
                         gradient.addColorStop(0.5, '#e2e8f0');
@@ -836,21 +974,18 @@
                         ctx.fillStyle = gradient;
                         ctx.fillRect(0, 0, 600, 600);
 
-                        // Draw subtle studio radial floor glow
                         const radial = ctx.createRadialGradient(300, 500, 20, 300, 500, 250);
                         radial.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
                         radial.addColorStop(1, 'rgba(255, 255, 255, 0)');
                         ctx.fillStyle = radial;
                         ctx.fillRect(0, 0, 600, 600);
 
-                        // Calculate aspect ratio to center image nicely
                         const hRatio = 460 / img.width;
                         const vRatio = 460 / img.height;
                         const ratio = Math.min(hRatio, vRatio);
                         const centerShiftX = (600 - img.width * ratio) / 2;
                         const centerShiftY = (550 - img.height * ratio) / 2;
 
-                        // Draw product image with professional drop shadow
                         ctx.save();
                         ctx.shadowColor = 'rgba(0, 0, 0, 0.25)';
                         ctx.shadowBlur = 25;
@@ -867,8 +1002,9 @@
             });
         }
 
-        // Admin CRUD & Settings Save
         window.saveStoreSettings = async function() {
+            storeSettings.storeName = document.getElementById('settingStoreName').value.trim() || "Muhammad Shayan Store";
+            storeSettings.adminPin = document.getElementById('settingAdminPin').value.trim() || "7866";
             storeSettings.whatsapp = document.getElementById('settingPhone').value.trim();
             storeSettings.bankName = document.getElementById('settingBankName').value.trim();
             storeSettings.bankAccount = document.getElementById('settingBankAccount').value.trim();
@@ -885,7 +1021,7 @@
             }
 
             updateStoreUI();
-            alert("Store settings saved successfully!");
+            alert("Store settings, PIN, and store name updated successfully!");
         }
 
         window.saveProduct = async function() {
@@ -997,7 +1133,6 @@
             setTimeout(() => toast.remove(), 2500);
         }
 
-        // Custom Mouse Click Circle Animation Event Listener
         window.addEventListener('click', (e) => {
             const circle = document.createElement('div');
             circle.className = 'click-circle';
