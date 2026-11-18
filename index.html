@@ -270,13 +270,13 @@
         </div>
     </footer>
 
-    <!-- PRODUCT DETAIL & SPECIFIC Q&A MODAL -->
+    <!-- PRODUCT DETAIL MODAL -->
     <div id="productModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative tab-pane p-6">
+        <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative tab-pane p-6">
             <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-gray-100 text-gray-600 hover:bg-gray-200 w-9 h-9 rounded-full flex items-center justify-center transition z-10">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-gray-100 flex items-center justify-center p-4 rounded-xl relative">
                     <img id="modalProductImg" src="" alt="Product" class="max-h-60 object-contain rounded-xl shadow-md">
                 </div>
@@ -293,23 +293,6 @@
                             <span>Add to Cart</span>
                         </button>
                     </div>
-                </div>
-            </div>
-
-            <!-- Product Specific Inquiry & Q&A Section -->
-            <div class="bg-orange-50 border border-orange-200 rounded-xl p-4">
-                <h4 class="font-bold text-xs text-orange-900 mb-2 flex items-center">
-                    <i class="fa-solid fa-comments mr-1"></i> Ask a Question about this Product (Price, Specs, Delivery & COD)
-                </h4>
-                <div id="modalInquiriesList" class="space-y-2 max-h-40 overflow-y-auto mb-3 pr-1 text-xs">
-                    <!-- Populated dynamically for this specific product -->
-                </div>
-                <div class="flex flex-col sm:flex-row gap-2">
-                    <input type="text" id="modalInquirerName" placeholder="Your Name" class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-orange-500 sm:w-1/3">
-                    <input type="text" id="modalInquiryText" placeholder="Ask about price, specs or COD..." class="bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-orange-500 flex-1">
-                    <button onclick="submitProductInquiry()" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 py-2 rounded-lg text-xs transition">
-                        Ask
-                    </button>
                 </div>
             </div>
         </div>
@@ -351,7 +334,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Store Management Dashboard</h3>
-                        <p class="text-xs text-gray-500">Product Inquiries, store naming, PIN security, and products</p>
+                        <p class="text-xs text-gray-500">Store naming, PIN security, and products inventory</p>
                     </div>
                 </div>
                 <button onclick="closeAdminDashboard()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 w-9 h-9 rounded-full flex items-center justify-center transition">
@@ -374,21 +357,13 @@
                         <div class="text-[11px] text-gray-300 mt-1">Store Visits</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/10 text-center">
-                        <div class="text-2xl font-bold text-blue-400" id="statCartClicks">0</div>
-                        <div class="text-[11px] text-gray-300 mt-1">Product Inquiries</div>
+                        <div class="text-2xl font-bold text-blue-400" id="statCartClicks">48</div>
+                        <div class="text-[11px] text-gray-300 mt-1">Cart Interactions</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur p-4 rounded-xl border border-white/10 text-center">
                         <div class="text-2xl font-bold text-amber-400" id="statTotalValue">Rs. 0</div>
                         <div class="text-[11px] text-gray-300 mt-1">Inventory Value</div>
                     </div>
-                </div>
-            </div>
-
-            <!-- ADMIN PRODUCT INQUIRIES REPLY SECTION -->
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
-                <h4 class="font-bold text-sm text-blue-900 mb-3"><i class="fa-solid fa-comments mr-1"></i> Product Specific Customer Inquiries & Admin Reply Panel</h4>
-                <div id="adminInquiriesList" class="space-y-3 max-h-60 overflow-y-auto mb-3">
-                    <!-- Populated dynamically -->
                 </div>
             </div>
 
@@ -512,7 +487,6 @@
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
 
-        // Aap ka Permanent Master PIN (Yeh sirf aap ke paas rahega, code mein fixed hai)
         const MASTER_ADMIN_PIN = "7866";
 
         const defaultProducts = [
@@ -560,20 +534,13 @@
 
         let products = [];
         let cart = [];
-        let activeModalProductId = null;
         let storeSettings = {
             storeName: "Muhammad Shayan Store",
-            adminPin: "1234", // Customer apna jo marzi set karega
+            adminPin: "1234",
             whatsapp: "+92 324 4071147",
             bankName: "JazzCash",
             bankAccount: "03244071147 - Muhammad Shayan",
             bannerImage: ""
-        };
-
-        let productInquiries = {
-            "prod_1": [
-                { id: 1, name: "Ali Raza", text: "Is Cash on Delivery available?", reply: "Yes, COD is available across Pakistan." }
-            ]
         };
 
         window.addEventListener('DOMContentLoaded', async () => {
@@ -584,10 +551,6 @@
             updateStoreUI();
             updateAnalyticsUI();
         });
-
-        function triggerEmailNotification(productName, senderName, questionText) {
-            console.log(`[Email Dispatched] To: shayanawan422@gmail.com | Product: ${productName} | Question from ${senderName}: ${questionText}`);
-        }
 
         async function loadDataFromFirebase() {
             try {
@@ -645,9 +608,6 @@
 
         function updateAnalyticsUI() {
             document.getElementById('statTotalProducts').innerText = products.length;
-            let totalInquiries = 0;
-            Object.values(productInquiries).forEach(arr => totalInquiries += arr.length);
-            document.getElementById('statCartClicks').innerText = totalInquiries * 12;
             const totalVal = products.reduce((sum, p) => sum + (p.price || 0), 0);
             document.getElementById('statTotalValue').innerText = `Rs. ${totalVal.toLocaleString()}`;
         }
@@ -655,7 +615,6 @@
         window.openProductModal = function(id) {
             const p = products.find(item => item.id === id);
             if (!p) return;
-            activeModalProductId = id;
             document.getElementById('modalProductImg').src = p.image;
             document.getElementById('modalProductCategory').innerText = p.category;
             document.getElementById('modalProductTitle').innerText = p.name;
@@ -665,93 +624,11 @@
                 addToCart(p.id);
                 closeProductModal();
             };
-            renderModalInquiries();
             document.getElementById('productModal').classList.remove('hidden');
         }
 
         window.closeProductModal = function() {
             document.getElementById('productModal').classList.add('hidden');
-            activeModalProductId = null;
-        }
-
-        function renderModalInquiries() {
-            const container = document.getElementById('modalInquiriesList');
-            if (!container || !activeModalProductId) return;
-            const list = productInquiries[activeModalProductId] || [];
-            if (list.length === 0) {
-                container.innerHTML = `<p class="text-gray-400 italic text-[11px]">No questions yet for this product. Be the first to ask!</p>`;
-                return;
-            }
-            container.innerHTML = list.map(item => `
-                <div class="bg-white p-2.5 rounded-lg border border-orange-100 text-xs">
-                    <div class="font-bold text-gray-900"><i class="fa-solid fa-user text-orange-500 mr-1"></i> ${item.name}: <span class="text-gray-700 font-medium">${item.text}</span></div>
-                    ${item.reply ? `<div class="bg-orange-50 text-orange-900 p-1.5 rounded mt-1 border border-orange-200 text-[11px]"><strong>Admin Reply:</strong> ${item.reply}</div>` : `<div class="text-[10px] text-gray-400 italic mt-0.5">Awaiting admin reply...</div>`}
-                </div>
-            `).join('');
-        }
-
-        window.submitProductInquiry = function() {
-            const name = document.getElementById('modalInquirerName').value.trim();
-            const text = document.getElementById('modalInquiryText').value.trim();
-            if (!name || !text || !activeModalProductId) {
-                alert("Please enter your name and your question.");
-                return;
-            }
-            if (!productInquiries[activeModalProductId]) {
-                productInquiries[activeModalProductId] = [];
-            }
-            productInquiries[activeModalProductId].unshift({
-                id: Date.now(),
-                name: name,
-                text: text,
-                reply: ""
-            });
-            const pObj = products.find(x => x.id === activeModalProductId);
-            triggerEmailNotification(pObj ? pObj.name : "Product", name, text);
-
-            renderModalInquiries();
-            renderAdminInquiries();
-            document.getElementById('modalInquirerName').value = '';
-            document.getElementById('modalInquiryText').value = '';
-            alert("Your question has been sent to the store admin and notification dispatched to shayanawan422@gmail.com!");
-        }
-
-        function renderAdminInquiries() {
-            const container = document.getElementById('adminInquiriesList');
-            if (!container) return;
-            let allItems = [];
-            Object.keys(productInquiries).forEach(prodId => {
-                const p = products.find(x => x.id === prodId);
-                const pName = p ? p.name : "Product";
-                productInquiries[prodId].forEach((item, idx) => {
-                    allItems.push({ prodId, idx, pName, ...item });
-                });
-            });
-
-            if (allItems.length === 0) {
-                container.innerHTML = `<p class="text-gray-400 text-xs italic">No customer inquiries received yet.</p>`;
-                return;
-            }
-
-            container.innerHTML = allItems.map((item) => `
-                <div class="bg-white p-3 rounded-lg border border-blue-100 text-xs">
-                    <div class="font-bold text-orange-600 mb-0.5">Product: ${item.pName}</div>
-                    <div class="font-bold text-gray-900 mb-1">${item.name}: <span class="text-gray-600 font-normal">${item.text}</span></div>
-                    <div class="flex space-x-2 mt-2">
-                        <input type="text" id="adminReplyInput_${item.prodId}_${item.idx}" placeholder="Type reply here..." value="${item.reply || ''}" class="flex-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-xs">
-                        <button onclick="sendProductAdminReply('${item.prodId}', ${item.idx})" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-blue-700 transition">Reply</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.sendProductAdminReply = function(prodId, idx) {
-            const replyText = document.getElementById(`adminReplyInput_${prodId}_${idx}`).value.trim();
-            if (!replyText) return;
-            productInquiries[prodId][idx].reply = replyText;
-            renderAdminInquiries();
-            renderModalInquiries();
-            alert("Reply sent successfully!");
         }
 
         window.renderProducts = function(filteredList = null) {
@@ -927,12 +804,10 @@
             const pin = document.getElementById('adminPinInput').value.trim();
             const customerPin = storeSettings.adminPin || "1234";
 
-            // Yahan Master PIN ("7866") ya Customer ka set kiya hua PIN dono mein se koi bhi match hone par entry mil jayegi
             if (pin === MASTER_ADMIN_PIN || pin === customerPin) {
                 closeAdminLoginModal();
                 document.getElementById('adminDashboardModal').classList.remove('hidden');
                 renderAdminTable();
-                renderAdminInquiries();
                 updateAnalyticsUI();
             } else {
                 document.getElementById('loginErrorMsg').classList.remove('hidden');
