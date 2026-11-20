@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f4f5f7; overflow-x: hidden; }
-        
+
         /* Custom Mouse Click Circle Animation */
         .click-circle {
             position: fixed;
@@ -89,9 +89,9 @@
             <span><i class="fa-solid fa-phone mr-1"></i> <span id="topBarPhone">+92 324 4071147</span></span>
             <span><i class="fa-solid fa-envelope mr-1"></i> shayanawan422@gmail.com</span>
             <div class="flex space-x-2 ml-2">
-                <a href="https://www.facebook.com/share/1HCgjMfXXc/" target="_blank" class="hover:text-orange-200" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" class="hover:text-orange-200" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@shayan_gas_agency8?is_from_webapp=1&sender_device=pc" target="_blank" class="hover:text-orange-200" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" onclick="return false;" class="hover:text-orange-200" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/awan.mart_3434?hvrq=b2JhbG5kOHlxOG5u" target="_blank" rel="noopener noreferrer" class="hover:text-orange-200" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" onclick="return false;" class="hover:text-orange-200" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -153,7 +153,7 @@
                 <div class="mb-6 md:mb-0 max-w-lg">
                     <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Mega Sale Live</span>
                     <h2 id="heroBannerTitle" class="text-2xl md:text-4xl font-bold mt-3 leading-tight">Welcome to Muhammad Shayan Store</h2>
-                    <p class="text-orange-100 mt-2 text-sm">Explore top-quality products, smart gadgets, and everyday essentials at unbeatable prices with direct WhatsApp support & JazzCash payment.</p>
+                    <p class="text-orange-100 mt-2 text-sm">Explore top-quality gas regulators, kitchen essentials, and household gadgets at unbeatable prices with direct WhatsApp support & JazzCash payment.</p>
                     <button onclick="document.getElementById('productCatalog').scrollIntoView({behavior: 'smooth'})" class="mt-5 bg-white text-orange-600 font-semibold px-6 py-2.5 rounded-lg shadow hover:bg-orange-50 transition text-sm">
                         Shop Now
                     </button>
@@ -162,7 +162,7 @@
                     <i class="fa-solid fa-headset text-4xl text-white mb-2"></i>
                     <h3 class="font-bold text-lg">Instant WhatsApp Order</h3>
                     <p class="text-xs text-orange-100 mt-1" id="heroWhatsAppDisplay">+92 324 4071147</p>
-                    <a href="https://wa.me/923244071147" target="_blank" class="mt-3 inline-block bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                    <a id="heroWhatsAppLink" href="https://wa.me/923244071147" target="_blank" class="mt-3 inline-block bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-green-600 transition">
                         <i class="fa-brands fa-whatsapp mr-1"></i> Chat with Us
                     </a>
                 </div>
@@ -243,16 +243,16 @@
                     <div class="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold">MS</div>
                     <h3 id="footerStoreName" class="font-bold text-lg">Muhammad Shayan Store</h3>
                 </div>
-                <p class="text-xs text-gray-400 leading-relaxed">Your trusted online shopping destination in Pakistan. Bringing you premium quality electronics, fashion, and lifestyle gadgets with smooth customer service.</p>
+                <p class="text-xs text-gray-400 leading-relaxed">Your trusted online shopping destination in Pakistan. Bringing you premium quality gas regulators, kitchen essentials, and household items with smooth customer service.</p>
                 <div class="flex space-x-3 mt-4 text-lg">
-                    <a href="https://www.facebook.com/share/1HCgjMfXXc/" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@shayan_gas_agency8?is_from_webapp=1&sender_device=pc" target="_blank" class="hover:text-orange-400"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" onclick="return false;" class="hover:text-orange-400" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/awan.mart_3434?hvrq=b2JhbG5kOHlxOG5u" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" onclick="return false;" class="hover:text-orange-400" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-semibold text-sm uppercase tracking-wider mb-3 text-orange-400">Payment & Support</h4>
-                <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-wallet text-orange-500 mr-2"></i> Bank / Mobile Wallet: <span id="footerBankName" class="text-white font-medium">JazzCash</span></p>
+                <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-wallet text-orange-500 mr-2"></i> Bank / Mobile Wallet: <span id="footerBankName" class="text-white font-medium">JazzCash</span> (<span id="footerBankAccount" class="text-orange-300">Muhammad Shayan</span>)</p>
                 <p class="text-xs text-gray-400 mb-2"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> WhatsApp: <span id="footerPhone" class="text-white font-medium">+92 324 4071147</span></p>
                 <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> Email: <span class="text-white font-medium">shayanawan422@gmail.com</span></p>
             </div>
@@ -334,7 +334,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Store Management Dashboard</h3>
-                        <p class="text-xs text-gray-500">Store naming, PIN security, and products inventory</p>
+                        <p class="text-xs text-gray-500">Store naming, PIN security, live queries, and products inventory</p>
                     </div>
                 </div>
                 <button onclick="closeAdminDashboard()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 w-9 h-9 rounded-full flex items-center justify-center transition">
@@ -367,6 +367,19 @@
                 </div>
             </div>
 
+            <!-- AUTO CUSTOMER QUERIES FEED (EVERY 10 MINUTES) -->
+            <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-5 mb-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <h4 class="font-bold text-sm text-blue-950 flex items-center">
+                        <i class="fa-solid fa-comments mr-2 text-blue-600"></i> Live Customer Queries (Auto Every 10 Mins)
+                    </h4>
+                    <span id="nextQueryCountdown" class="text-[11px] font-semibold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">Next query in 10:00</span>
+                </div>
+                <div id="customerQueriesList" class="space-y-2.5 max-h-60 overflow-y-auto pr-1">
+                    <!-- Queries rendered dynamically -->
+                </div>
+            </div>
+
             <!-- Store Settings & Security Box -->
             <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 mb-8">
                 <h4 class="font-bold text-sm text-orange-900 mb-3"><i class="fa-solid fa-gear mr-1"></i> Store Name, Security PIN & Payment Configurations</h4>
@@ -377,7 +390,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Customer Admin PIN (4-Digit)</label>
-                        <input type="text" id="settingAdminPin" maxlength="4" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                        <input type="password" id="settingAdminPin" maxlength="4" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">WhatsApp Number</label>
@@ -392,7 +405,7 @@
                         <input type="text" id="settingBankAccount" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between flex-wrap gap-3">
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Update Bank / Store Banner Photo</label>
                         <input type="file" id="settingPhotoInput" accept="image/*" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-orange-500 file:text-white hover:file:bg-orange-600">
@@ -410,15 +423,15 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Product Name</label>
-                        <input type="text" id="adminProdName" placeholder="e.g. Wireless Gaming Earbuds" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                        <input type="text" id="adminProdName" placeholder="e.g. Heavy Duty Gas Regulator" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Price (Rs.)</label>
-                        <input type="number" id="adminProdPrice" placeholder="e.g. 1999" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                        <input type="number" id="adminProdPrice" placeholder="e.g. 2000" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Category</label>
-                        <input type="text" id="adminProdCategory" placeholder="e.g. Electronics" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
+                        <input type="text" id="adminProdCategory" placeholder="e.g. Gas & Kitchen" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:border-orange-500">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-700 mb-1">Product Image (Choose Photo)</label>
@@ -471,7 +484,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
-        import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+        import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDxkEnZje9gHfgKE3_FTd_4AZ7hmTRbDt4",
@@ -484,536 +497,613 @@
         };
 
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        try { getAnalytics(app); } catch (_) {}
         const db = getFirestore(app);
 
         const MASTER_ADMIN_PIN = "7866";
+        const QUERY_INTERVAL_SECONDS = 600; // 10 minutes
+
+        let storeSettings = {
+            storeName: "Muhammad Shayan Store",
+            adminPin: MASTER_ADMIN_PIN,
+            phone: "+92 324 4071147",
+            bankName: "JazzCash",
+            bankAccount: "Muhammad Shayan",
+            bannerPhoto: ""
+        };
 
         const defaultProducts = [
             {
                 id: "prod_1",
-                name: "Wireless Bluetooth Earbuds Pro",
+                name: "Eman Star High Pressure L.P.G Regulator (TMN 818296)",
+                price: 2000,
                 category: "Electronics",
-                price: 1499,
-                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop&q=80",
-                description: "High bass wireless earbuds with active noise cancellation, smart touch controls, and 24-hour battery life backup with charging case."
+                image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&auto=format&fit=crop&q=60",
+                desc: "Heavy-duty high pressure LPG gas regulator with leak-proof brass valve and reliable pressure control for domestic and commercial cylinders."
             },
             {
                 id: "prod_2",
-                name: "Smart Fitness Tracker Watch",
-                category: "Gadgets",
-                price: 2499,
-                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=80",
-                description: "Advanced fitness smartwatch featuring heart rate monitoring, sleep tracking, sports modes, and HD full-touch display."
+                name: "Shayan Pro-Guard Gas Safety Regulator",
+                price: 3200,
+                category: "Electric",
+                image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&auto=format&fit=crop&q=60",
+                desc: "Auto-shutoff gas safety regulator with pressure gauge indicator to protect kitchen appliances from sudden gas leakage."
             },
             {
                 id: "prod_3",
-                name: "RGB Gaming Mechanical Keyboard",
-                category: "Gaming",
-                price: 3499,
-                image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=80",
-                description: "Tactile mechanical keyboard with customizable RGB backlighting, anti-ghosting keys, and durable aluminum alloy frame."
+                name: "Flora Glass Jug with Lid (1500ml)",
+                price: 1200,
+                category: "Gadgets",
+                image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&auto=format&fit=crop&q=60",
+                desc: "Crystal clear 1500ml heat-resistant glass water and juice pitcher with snug-fit lid and easy-pour handle."
             },
             {
                 id: "prod_4",
-                name: "Portable LED Ring Light 10 inch",
-                category: "Studio",
-                price: 1899,
-                image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80",
-                description: "Professional selfie ring light with adjustable color temperatures, tripod stand, and smartphone holder for content creators."
+                name: "Life Star Italian Technology Gas Cylinder Regulator",
+                price: 1800,
+                category: "Gadgets",
+                image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&auto=format&fit=crop&q=60",
+                desc: "Italian-technology precision gas cylinder regulator designed for steady flame output and long-lasting durability."
             },
             {
                 id: "prod_5",
-                name: "Fast Charging Power Bank 20000mAh",
-                category: "Accessories",
-                price: 2999,
-                image: "https://images.unsplash.com/photo-1609592424104-97d4a4d334e1?w=500&auto=format&fit=crop&q=80",
-                description: "High-capacity power bank with dual USB fast output, Type-C input, and smart LED digital percentage power indicator."
+                name: "Eotia Germany Quality Hand Cutter & Chopper",
+                price: 2200,
+                category: "Gadgets",
+                image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=500&auto=format&fit=crop&q=60",
+                desc: "Multi-blade manual vegetable and onion chopper with ergonomic pull mechanism and non-slip bowl base."
             }
         ];
 
-        let products = [];
-        let cart = [];
-        let storeSettings = {
-            storeName: "Muhammad Shayan Store",
-            adminPin: "1234",
-            whatsapp: "+92 324 4071147",
-            bankName: "JazzCash",
-            bankAccount: "03244071147 - Muhammad Shayan",
-            bannerImage: ""
-        };
+        const customerNamesPool = [
+            "Bilal Ahmad", "Ayesha Tariq", "Hamza Raza", "Zainab Noor", "Danish Mehmood",
+            "Hina Shahid", "Saad Iqbal", "Maira Farooq", "Kamran Siddiqui", "Sana Javed",
+            "Waqas Hassan", "Mehwish Adeel", "Faizan Malik", "Nadia Arshad", "Tahir Mahmood"
+        ];
 
-        window.addEventListener('DOMContentLoaded', async () => {
-            await loadDataFromFirebase();
+        const queryTemplates = [
+            { topic: "Price", text: (prod, price) => `Assalam-o-Alaikum, "${prod}" ki final price kya hai? Kya Rs. ${price} mein delivery bhi shamil hai?` },
+            { topic: "Price", text: (prod, price) => `Hi! Mujhe "${prod}" ka latest rate pochna tha, abhi Rs. ${price} hi chal raha hai ya koi discount hai?` },
+            { topic: "Quality", text: (prod) => `Salam, "${prod}" ki quality kaisi hai? Kya rozmarra use ke liye durable aur solid hai?` },
+            { topic: "Quality", text: (prod) => `Hello, "${prod}" ka material aur finish kaisa hai? Picture jaisa hi deliver hota hai?` },
+            { topic: "Warranty", text: (prod) => `Assalam-o-Alaikum, "${prod}" par koi warranty ya checking warranty milti hai?` },
+            { topic: "Warranty", text: (prod) => `Hi, agar "${prod}" mein koi fault aa jaye to replacement ya warranty policy kya hai?` }
+        ];
+
+        let products = [...defaultProducts];
+        let cart = JSON.parse(localStorage.getItem("mss_cart") || "[]");
+        let analyticsData = JSON.parse(localStorage.getItem("mss_analytics") || '{"views": 1420, "cartClicks": 48}');
+        let customerQueries = JSON.parse(localStorage.getItem("mss_customer_queries") || "[]");
+        let lastCustomerName = "";
+        let lastQueryText = "";
+        let secondsRemaining = QUERY_INTERVAL_SECONDS;
+
+        function cleanPhoneNumber(phone) {
+            return (phone || "+923244071147").replace(/[^\d]/g, "");
+        }
+
+        function isExcludedFromQueries(productName) {
+            return /bluetooth|earbud/i.test(productName || "");
+        }
+
+        function getEligibleProductsForQueries() {
+            const eligible = products.filter(p => !isExcludedFromQueries(p.name));
+            return eligible.length ? eligible : defaultProducts;
+        }
+
+        function applyStoreSettingsToUI() {
+            document.title = `${storeSettings.storeName} - Online Shopping in Pakistan`;
+            document.getElementById("pageTitle").innerText = `${storeSettings.storeName} - Online Shopping in Pakistan`;
+            document.getElementById("brandStoreName").innerText = storeSettings.storeName;
+            document.getElementById("heroBannerTitle").innerText = `Welcome to ${storeSettings.storeName}`;
+            document.getElementById("footerStoreName").innerText = storeSettings.storeName;
+            document.getElementById("topBarPhone").innerText = storeSettings.phone;
+            document.getElementById("heroWhatsAppDisplay").innerText = storeSettings.phone;
+            document.getElementById("footerPhone").innerText = storeSettings.phone;
+            document.getElementById("footerBankName").innerText = storeSettings.bankName;
+            document.getElementById("footerBankAccount").innerText = storeSettings.bankAccount;
+
+            const waClean = cleanPhoneNumber(storeSettings.phone);
+            document.getElementById("heroWhatsAppLink").href = `https://wa.me/${waClean}`;
+
+            document.getElementById("settingStoreName").value = storeSettings.storeName;
+            document.getElementById("settingAdminPin").value = storeSettings.adminPin || MASTER_ADMIN_PIN;
+            document.getElementById("settingPhone").value = storeSettings.phone;
+            document.getElementById("settingBankName").value = storeSettings.bankName;
+            document.getElementById("settingBankAccount").value = storeSettings.bankAccount;
+        }
+
+        function pickDistinct(arr, excludeValue) {
+            const candidates = arr.filter(x => x !== excludeValue);
+            const pool = candidates.length ? candidates : arr;
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+
+        function generateRandomCustomerQuery() {
+            const eligibleProducts = getEligibleProductsForQueries();
+            if (!eligibleProducts.length) return;
+
+            const prodObj = eligibleProducts[Math.floor(Math.random() * eligibleProducts.length)];
+            const customerName = pickDistinct(customerNamesPool, lastCustomerName);
+
+            let chosenTemplate = null;
+            let generatedText = "";
+            for (let attempt = 0; attempt < 8; attempt++) {
+                const tpl = queryTemplates[Math.floor(Math.random() * queryTemplates.length)];
+                const candidateText = tpl.text(prodObj.name, Number(prodObj.price || 0).toLocaleString());
+                if (candidateText !== lastQueryText) {
+                    chosenTemplate = tpl;
+                    generatedText = candidateText;
+                    break;
+                }
+            }
+            if (!chosenTemplate) {
+                chosenTemplate = queryTemplates[0];
+                generatedText = chosenTemplate.text(prodObj.name, Number(prodObj.price || 0).toLocaleString());
+            }
+
+            lastCustomerName = customerName;
+            lastQueryText = generatedText;
+
+            const newQuery = {
+                id: `q_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+                customerName,
+                productName: prodObj.name,
+                topic: chosenTemplate.topic,
+                message: generatedText,
+                time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+            };
+
+            customerQueries.unshift(newQuery);
+            if (customerQueries.length > 30) customerQueries = customerQueries.slice(0, 30);
+            localStorage.setItem("mss_customer_queries", JSON.stringify(customerQueries));
+
+            renderCustomerQueries();
+        }
+
+        function renderCustomerQueries() {
+            const box = document.getElementById("customerQueriesList");
+            if (!box) return;
+
+            const validQueries = customerQueries.filter(q => !isExcludedFromQueries(q.productName));
+
+            if (!validQueries.length) {
+                box.innerHTML = `<div class="bg-white rounded-lg p-3 text-xs text-gray-500">Waiting for first customer query...</div>`;
+                return;
+            }
+
+            box.innerHTML = validQueries.map(q => {
+                const badgeColor =
+                    q.topic === "Price" ? "bg-amber-100 text-amber-800" :
+                    q.topic === "Quality" ? "bg-emerald-100 text-emerald-800" :
+                    "bg-purple-100 text-purple-800";
+
+                return `
+                    <div class="bg-white border border-blue-100 rounded-xl p-3 shadow-xs text-xs">
+                        <div class="flex items-center justify-between gap-2 mb-1">
+                            <div class="flex items-center space-x-2">
+                                <span class="font-bold text-gray-900"><i class="fa-solid fa-user mr-1 text-blue-600"></i>${q.customerName}</span>
+                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${badgeColor}">${q.topic}</span>
+                            </div>
+                            <span class="text-[10px] text-gray-400">${q.time}</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">"${q.message}"</p>
+                        <div class="text-[10px] text-orange-600 font-semibold mt-1">Product: ${q.productName}</div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function startQueryScheduler() {
+            customerQueries = customerQueries.filter(q => !isExcludedFromQueries(q.productName));
+            localStorage.setItem("mss_customer_queries", JSON.stringify(customerQueries));
+
+            if (!customerQueries.length) {
+                generateRandomCustomerQuery();
+            } else {
+                renderCustomerQueries();
+            }
+
+            secondsRemaining = QUERY_INTERVAL_SECONDS;
+            updateCountdownLabel();
+
+            setInterval(() => {
+                secondsRemaining -= 1;
+                if (secondsRemaining <= 0) {
+                    generateRandomCustomerQuery();
+                    secondsRemaining = QUERY_INTERVAL_SECONDS;
+                }
+                updateCountdownLabel();
+            }, 1000);
+        }
+
+        function updateCountdownLabel() {
+            const label = document.getElementById("nextQueryCountdown");
+            if (!label) return;
+            const mins = String(Math.floor(secondsRemaining / 60)).padStart(2, "0");
+            const secs = String(secondsRemaining % 60).padStart(2, "0");
+            label.innerText = `Next query in ${mins}:${secs}`;
+        }
+
+        async function loadStoreData() {
+            try {
+                const settingsSnap = await getDoc(doc(db, "store_config", "main"));
+                if (settingsSnap.exists()) {
+                    storeSettings = { ...storeSettings, ...settingsSnap.data(), adminPin: MASTER_ADMIN_PIN };
+                }
+            } catch (_) {}
+
+            applyStoreSettingsToUI();
+
+            try {
+                const prodSnap = await getDocs(collection(db, "products"));
+                if (!prodSnap.empty) {
+                    const loaded = [];
+                    prodSnap.forEach(d => loaded.push({ id: d.id, ...d.data() }));
+                    products = loaded;
+                }
+            } catch (_) {}
+
+            analyticsData.views += 1;
+            localStorage.setItem("mss_analytics", JSON.stringify(analyticsData));
+
             renderProducts();
             renderTicker();
-            updateCartCount();
-            updateStoreUI();
+            renderCart();
             updateAnalyticsUI();
-        });
-
-        async function loadDataFromFirebase() {
-            try {
-                const settingsRef = doc(db, "storeSettings", "config");
-                const settingsSnap = await getDoc(settingsRef);
-                if (settingsSnap.exists()) {
-                    storeSettings = { ...storeSettings, ...settingsSnap.data() };
-                } else {
-                    await setDoc(settingsRef, storeSettings);
-                }
-
-                const querySnapshot = await getDocs(collection(db, "products"));
-                if (!querySnapshot.empty) {
-                    products = [];
-                    querySnapshot.forEach((docSnap) => {
-                        products.push({ id: docSnap.id, ...docSnap.data() });
-                    });
-                } else {
-                    for (let p of defaultProducts) {
-                        await setDoc(doc(db, "products", p.id), p);
-                    }
-                    products = [...defaultProducts];
-                }
-            } catch (e) {
-                console.log("Firebase offline mode or error:", e);
-                products = [...defaultProducts];
-            }
+            startQueryScheduler();
         }
+
+        function renderProducts(list = products) {
+            const grid = document.getElementById("productCatalog");
+            const badge = document.getElementById("productCountBadge");
+            badge.innerText = `Showing ${list.length} item${list.length === 1 ? "" : "s"}`;
+
+            if (!list.length) {
+                grid.innerHTML = `<div class="col-span-full bg-white rounded-xl p-8 text-center text-gray-500 text-sm">No matching products found.</div>`;
+                return;
+            }
+
+            grid.innerHTML = list.map((p, idx) => {
+                const showSparks = idx < 3;
+                const sparksHtml = showSparks ? `
+                    <div class="fire-card-overlay">
+                        <span class="fire-spark" style="left:18%; top:10%; width:5px; height:5px; animation-delay:0s;"></span>
+                        <span class="fire-spark" style="left:65%; top:5%; width:4px; height:4px; animation-delay:0.5s;"></span>
+                        <span class="fire-spark" style="left:82%; top:20%; width:6px; height:6px; animation-delay:1s;"></span>
+                    </div>` : "";
+
+                return `
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-100 flex flex-col justify-between relative group">
+                        ${sparksHtml}
+                        <div class="p-3 bg-gray-50 flex items-center justify-center h-40 cursor-pointer relative" onclick="openProductModal('${p.id}')">
+                            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="p-3.5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2 py-0.5 rounded">${p.category || "General"}</span>
+                                <h4 onclick="openProductModal('${p.id}')" class="font-semibold text-xs sm:text-sm text-gray-800 mt-1.5 line-clamp-2 cursor-pointer hover:text-orange-600 transition">${p.name}</h4>
+                            </div>
+                            <div class="mt-3">
+                                <div class="text-orange-600 font-bold text-sm sm:text-base">Rs. ${Number(p.price).toLocaleString()}</div>
+                                <button onclick="addToCart('${p.id}')" class="mt-2.5 w-full bg-orange-500 text-white text-xs font-semibold py-2 rounded-lg hover:bg-orange-600 transition flex items-center justify-center space-x-1">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderTicker() {
+            const ticker = document.getElementById("productTickerContainer");
+            const items = products.length ? [...products, ...products] : [];
+            ticker.innerHTML = items.map(p => `
+                <div onclick="openProductModal('${p.id}')" class="flex items-center space-x-2.5 bg-orange-50/70 border border-orange-100 rounded-lg px-3 py-1.5 cursor-pointer hover:bg-orange-100 transition shrink-0">
+                    <img src="${p.image}" alt="${p.name}" class="w-8 h-8 object-contain rounded bg-white p-0.5">
+                    <div class="text-xs">
+                        <div class="font-semibold text-gray-800 whitespace-nowrap">${p.name}</div>
+                        <div class="text-orange-600 font-bold text-[11px]">Rs. ${Number(p.price).toLocaleString()}</div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        window.filterProducts = function() {
+            const q = (document.getElementById("searchInput").value || document.getElementById("mobileSearchInput").value || "").toLowerCase().trim();
+            if (!q) return renderProducts(products);
+            const filtered = products.filter(p =>
+                (p.name || "").toLowerCase().includes(q) ||
+                (p.category || "").toLowerCase().includes(q) ||
+                (p.desc || "").toLowerCase().includes(q)
+            );
+            renderProducts(filtered);
+        };
 
         window.switchTab = function(tabName) {
-            document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
-            document.getElementById('tab-' + tabName).classList.remove('hidden');
-            if (tabName === 'cart') renderCartItems();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function updateStoreUI() {
-            const storeName = storeSettings.storeName || "Muhammad Shayan Store";
-            document.getElementById('pageTitle').innerText = `${storeName} - Online Shopping in Pakistan`;
-            document.getElementById('brandStoreName').innerText = storeName;
-            document.getElementById('heroBannerTitle').innerText = `Welcome to ${storeName}`;
-            document.getElementById('footerStoreName').innerText = storeName;
-
-            document.getElementById('topBarPhone').innerText = storeSettings.whatsapp;
-            document.getElementById('heroWhatsAppDisplay').innerText = storeSettings.whatsapp;
-            document.getElementById('footerPhone').innerText = storeSettings.whatsapp;
-            document.getElementById('footerBankName').innerText = storeSettings.bankName;
-            
-            document.getElementById('settingStoreName').value = storeName;
-            document.getElementById('settingAdminPin').value = storeSettings.adminPin || "1234";
-            document.getElementById('settingPhone').value = storeSettings.whatsapp;
-            document.getElementById('settingBankName').value = storeSettings.bankName;
-            document.getElementById('settingBankAccount').value = storeSettings.bankAccount;
-        }
-
-        function updateAnalyticsUI() {
-            document.getElementById('statTotalProducts').innerText = products.length;
-            const totalVal = products.reduce((sum, p) => sum + (p.price || 0), 0);
-            document.getElementById('statTotalValue').innerText = `Rs. ${totalVal.toLocaleString()}`;
-        }
+            document.getElementById("tab-shop").classList.toggle("hidden", tabName !== "shop");
+            document.getElementById("tab-cart").classList.toggle("hidden", tabName !== "cart");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
 
         window.openProductModal = function(id) {
             const p = products.find(item => item.id === id);
             if (!p) return;
-            document.getElementById('modalProductImg').src = p.image;
-            document.getElementById('modalProductCategory').innerText = p.category;
-            document.getElementById('modalProductTitle').innerText = p.name;
-            document.getElementById('modalProductPrice').innerText = `Rs. ${p.price.toLocaleString()}`;
-            document.getElementById('modalProductDesc').innerText = p.description;
-            document.getElementById('modalAddToCartBtn').onclick = () => {
+            document.getElementById("modalProductImg").src = p.image;
+            document.getElementById("modalProductCategory").innerText = p.category || "General";
+            document.getElementById("modalProductTitle").innerText = p.name;
+            document.getElementById("modalProductPrice").innerText = `Rs. ${Number(p.price).toLocaleString()}`;
+            document.getElementById("modalProductDesc").innerText = p.desc || "Quality product available at Muhammad Shayan Store.";
+            document.getElementById("modalAddToCartBtn").onclick = () => {
                 addToCart(p.id);
                 closeProductModal();
             };
-            document.getElementById('productModal').classList.remove('hidden');
-        }
+            document.getElementById("productModal").classList.remove("hidden");
+        };
 
         window.closeProductModal = function() {
-            document.getElementById('productModal').classList.add('hidden');
-        }
-
-        window.renderProducts = function(filteredList = null) {
-            const listToRender = filteredList || products;
-            const container = document.getElementById('productCatalog');
-            document.getElementById('productCountBadge').innerText = `${listToRender.length} Products Available`;
-            
-            if (listToRender.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 font-medium">No products found.</div>`;
-                return;
-            }
-
-            container.innerHTML = listToRender.map(p => `
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 overflow-hidden flex flex-col justify-between group cursor-pointer relative" onclick="openProductModal('${p.id}')">
-                    <div class="fire-card-overlay">
-                        <div class="fire-spark" style="left: 15%; width: 5px; height: 14px; animation-duration: 1.2s; animation-delay: 0.1s;"></div>
-                        <div class="fire-spark" style="left: 45%; width: 4px; height: 12px; animation-duration: 1.6s; animation-delay: 0.5s;"></div>
-                        <div class="fire-spark" style="left: 75%; width: 6px; height: 15px; animation-duration: 1.1s; animation-delay: 0.3s;"></div>
-                    </div>
-                    <div class="relative bg-gray-50 p-4 h-44 flex items-center justify-center overflow-hidden">
-                        <img src="${p.image}" alt="${p.name}" class="max-h-full object-contain group-hover:scale-105 transition duration-300">
-                        <span class="absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider z-10">${p.category}</span>
-                    </div>
-                    <div class="p-3.5 flex flex-col flex-1 justify-between">
-                        <div>
-                            <h4 class="font-semibold text-xs text-gray-900 line-clamp-2 mb-1">${p.name}</h4>
-                            <div class="text-orange-600 font-bold text-sm">Rs. ${p.price.toLocaleString()}</div>
-                        </div>
-                        <button onclick="event.stopPropagation(); addToCart('${p.id}')" class="mt-3 w-full bg-orange-50 text-orange-600 hover:bg-orange-500 hover:text-white transition text-xs font-semibold py-2 rounded-lg flex items-center justify-center space-x-1">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <span>Add to Cart</span>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-
-            renderAdminTable();
-            updateAnalyticsUI();
-        }
-
-        function renderTicker() {
-            const ticker = document.getElementById('productTickerContainer');
-            if (!ticker) return;
-            const doubled = [...products, ...products];
-            ticker.innerHTML = doubled.map(p => `
-                <div onclick="openProductModal('${p.id}')" class="flex items-center space-x-3 bg-gray-50 border border-gray-200 rounded-lg p-2.5 min-w-[220px] cursor-pointer hover:border-orange-500 transition shrink-0">
-                    <img src="${p.image}" class="w-10 h-10 object-contain bg-white rounded p-1 border">
-                    <div>
-                        <h5 class="text-xs font-semibold text-gray-900 truncate w-32">${p.name}</h5>
-                        <span class="text-orange-600 font-bold text-xs">Rs. ${p.price.toLocaleString()}</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.filterProducts = function() {
-            const query = document.getElementById('searchInput').value.toLowerCase() || document.getElementById('mobileSearchInput').value.toLowerCase();
-            const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query));
-            renderProducts(filtered);
-        }
+            document.getElementById("productModal").classList.add("hidden");
+        };
 
         window.addToCart = function(id) {
-            const p = products.find(item => item.id === id);
-            if (!p) return;
-            const existing = cart.find(item => item.id === id);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ ...p, qty: 1 });
-            }
-            updateCartCount();
-            showToast(`Added "${p.name}" to cart!`);
-        }
+            const prod = products.find(p => p.id === id);
+            if (!prod) return;
+            const existing = cart.find(c => c.id === id);
+            if (existing) existing.qty += 1;
+            else cart.push({ id: prod.id, name: prod.name, price: Number(prod.price), image: prod.image, qty: 1 });
 
-        function updateCartCount() {
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cartCount').innerText = totalQty;
-        }
+            localStorage.setItem("mss_cart", JSON.stringify(cart));
+            analyticsData.cartClicks += 1;
+            localStorage.setItem("mss_analytics", JSON.stringify(analyticsData));
+            renderCart();
+            updateAnalyticsUI();
+        };
 
-        function renderCartItems() {
-            const container = document.getElementById('cartItemsContainer');
-            const summarySec = document.getElementById('cartSummarySection');
-            const emptyState = document.getElementById('emptyCartState');
+        window.changeQty = function(id, delta) {
+            const item = cart.find(c => c.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) cart = cart.filter(c => c.id !== id);
+            localStorage.setItem("mss_cart", JSON.stringify(cart));
+            renderCart();
+        };
 
-            if (cart.length === 0) {
-                container.innerHTML = '';
-                summarySec.classList.add('hidden');
-                emptyState.classList.remove('hidden');
+        function renderCart() {
+            const container = document.getElementById("cartItemsContainer");
+            const summary = document.getElementById("cartSummarySection");
+            const emptyState = document.getElementById("emptyCartState");
+            const countBadge = document.getElementById("cartCount");
+
+            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            countBadge.innerText = totalQty;
+
+            if (!cart.length) {
+                container.innerHTML = "";
+                summary.classList.add("hidden");
+                emptyState.classList.remove("hidden");
                 return;
             }
 
-            emptyState.classList.add('hidden');
-            summarySec.classList.remove('hidden');
+            emptyState.classList.add("hidden");
+            summary.classList.remove("hidden");
+            document.getElementById("cartTotalPrice").innerText = `Rs. ${totalPrice.toLocaleString()}`;
 
-            let totalAmount = 0;
-            container.innerHTML = cart.map((item, index) => {
-                totalAmount += item.price * item.qty;
-                return `
-                    <div class="py-4 flex items-center justify-between">
-                        <div class="flex items-center space-x-3">
-                            <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-contain bg-gray-50 rounded-lg p-1 border">
-                            <div>
-                                <h4 class="font-semibold text-sm text-gray-900">${item.name}</h4>
-                                <div class="text-orange-600 text-xs font-bold">Rs. ${item.price.toLocaleString()} x ${item.qty}</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button onclick="changeQty(${index}, -1)" class="w-7 h-7 bg-gray-100 hover:bg-gray-200 rounded font-bold text-xs">-</button>
-                            <span class="text-xs font-semibold px-2">${item.qty}</span>
-                            <button onclick="changeQty(${index}, 1)" class="w-7 h-7 bg-gray-100 hover:bg-gray-200 rounded font-bold text-xs">+</button>
-                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 ml-3 text-sm"><i class="fa-solid fa-trash"></i></button>
+            container.innerHTML = cart.map(item => `
+                <div class="py-4 flex items-center justify-between gap-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-contain bg-gray-50 rounded-lg p-1 border">
+                        <div>
+                            <h4 class="font-semibold text-sm text-gray-900">${item.name}</h4>
+                            <p class="text-xs text-orange-600 font-bold">Rs. ${Number(item.price).toLocaleString()}</p>
                         </div>
                     </div>
-                `;
-            }).join('');
-
-            document.getElementById('cartTotalPrice').innerText = `Rs. ${totalAmount.toLocaleString()}`;
-        }
-
-        window.changeQty = function(index, delta) {
-            cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCartCount();
-            renderCartItems();
-        }
-
-        window.removeFromCart = function(index) {
-            cart.splice(index, 1);
-            updateCartCount();
-            renderCartItems();
+                    <div class="flex items-center space-x-2">
+                        <button onclick="changeQty('${item.id}', -1)" class="w-7 h-7 rounded bg-gray-200 hover:bg-gray-300 font-bold text-sm">-</button>
+                        <span class="text-sm font-semibold px-2">${item.qty}</span>
+                        <button onclick="changeQty('${item.id}', 1)" class="w-7 h-7 rounded bg-gray-200 hover:bg-gray-300 font-bold text-sm">+</button>
+                    </div>
+                </div>
+            `).join("");
         }
 
         window.checkoutWhatsApp = function() {
-            const name = document.getElementById('customerName').value.trim();
-            const phone = document.getElementById('customerPhone').value.trim();
-            const address = document.getElementById('customerAddress').value.trim();
-
+            const name = document.getElementById("customerName").value.trim();
+            const phone = document.getElementById("customerPhone").value.trim();
+            const address = document.getElementById("customerAddress").value.trim();
             if (!name || !phone || !address) {
-                alert("Please fill in all delivery details (Name, Phone, Address) before placing your order.");
+                alert("Please fill in your Name, Phone Number, and Delivery Address.");
                 return;
             }
 
-            let orderText = `*New Order - ${storeSettings.storeName}*%0A%0A`;
-            orderText += `*Customer Details:*%0A- Name: ${name}%0A- Phone: ${phone}%0A- Address: ${address}%0A%0A`;
-            orderText += `*Ordered Items:*%0A`;
-            
-            let total = 0;
-            cart.forEach((item, i) => {
-                orderText += `${i+1}. ${item.name} (x${item.qty}) - Rs. ${(item.price * item.qty).toLocaleString()}%0A`;
-                total += item.price * item.qty;
-            });
+            const lines = cart.map(i => `• ${i.name} (x${i.qty}) - Rs. ${(i.price * i.qty).toLocaleString()}`);
+            const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            const message =
+                `*New Order - ${storeSettings.storeName}*\n\n` +
+                `*Customer:* ${name}\n` +
+                `*Phone:* ${phone}\n` +
+                `*Address:* ${address}\n\n` +
+                `*Items:*\n${lines.join("\n")}\n\n` +
+                `*Total Amount:* Rs. ${total.toLocaleString()}\n` +
+                `*Payment Method:* ${storeSettings.bankName} (${storeSettings.bankAccount})`;
 
-            orderText += `%0A*Total Bill:* Rs. ${total.toLocaleString()}%0A`;
-            orderText += `*Payment Method:* ${storeSettings.bankName} (${storeSettings.bankAccount})`;
+            window.open(`https://wa.me/${cleanPhoneNumber(storeSettings.phone)}?text=${encodeURIComponent(message)}`, "_blank");
+        };
 
-            const cleanPhone = storeSettings.whatsapp.replace(/[^0-9]/g, '');
-            window.open(`https://wa.me/${cleanPhone}?text=${orderText}`, '_blank');
-        }
-
+        /* Admin Modal & Dashboard Logic */
         window.openAdminModal = function() {
-            document.getElementById('adminPinInput').value = '';
-            document.getElementById('loginErrorMsg').classList.add('hidden');
-            document.getElementById('adminLoginModal').classList.remove('hidden');
-        }
+            document.getElementById("adminPinInput").value = "";
+            document.getElementById("loginErrorMsg").classList.add("hidden");
+            document.getElementById("adminLoginModal").classList.remove("hidden");
+        };
 
         window.closeAdminLoginModal = function() {
-            document.getElementById('adminLoginModal').classList.add('hidden');
-        }
+            document.getElementById("adminLoginModal").classList.add("hidden");
+        };
 
         window.verifyAdminPin = function() {
-            const pin = document.getElementById('adminPinInput').value.trim();
-            const customerPin = storeSettings.adminPin || "1234";
-
-            if (pin === MASTER_ADMIN_PIN || pin === customerPin) {
+            const entered = document.getElementById("adminPinInput").value.trim();
+            if (entered === MASTER_ADMIN_PIN) {
                 closeAdminLoginModal();
-                document.getElementById('adminDashboardModal').classList.remove('hidden');
                 renderAdminTable();
+                renderCustomerQueries();
                 updateAnalyticsUI();
+                document.getElementById("adminDashboardModal").classList.remove("hidden");
             } else {
-                document.getElementById('loginErrorMsg').classList.remove('hidden');
+                document.getElementById("loginErrorMsg").classList.remove("hidden");
             }
-        }
+        };
 
         window.closeAdminDashboard = function() {
-            document.getElementById('adminDashboardModal').classList.add('hidden');
-        }
+            document.getElementById("adminDashboardModal").classList.add("hidden");
+        };
 
-        window.generateAiDescription = function() {
-            const name = document.getElementById('adminProdName').value.trim();
-            const category = document.getElementById('adminProdCategory').value.trim();
-            if (!name) {
-                alert("Please enter a product name first to generate AI description.");
-                return;
-            }
-            const desc = `Experience superior performance with the new ${name}. Expertly crafted for ${category || 'general use'}, offering premium durability, sleek styling, and top-tier reliability for everyday users across Pakistan.`;
-            document.getElementById('adminProdDesc').value = desc;
-        }
-
-        async function processImageWithStudioBackground(file) {
-            return new Promise((resolve) => {
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
                 const reader = new FileReader();
-                reader.onload = function(event) {
-                    const img = new Image();
-                    img.onload = function() {
-                        const canvas = document.createElement('canvas');
-                        canvas.width = 600;
-                        canvas.height = 600;
-                        const ctx = canvas.getContext('2d');
-
-                        const gradient = ctx.createLinearGradient(0, 0, 600, 600);
-                        gradient.addColorStop(0, '#f8fafc');
-                        gradient.addColorStop(0.5, '#e2e8f0');
-                        gradient.addColorStop(1, '#cbd5e1');
-                        ctx.fillStyle = gradient;
-                        ctx.fillRect(0, 0, 600, 600);
-
-                        const radial = ctx.createRadialGradient(300, 500, 20, 300, 500, 250);
-                        radial.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
-                        radial.addColorStop(1, 'rgba(255, 255, 255, 0)');
-                        ctx.fillStyle = radial;
-                        ctx.fillRect(0, 0, 600, 600);
-
-                        const hRatio = 460 / img.width;
-                        const vRatio = 460 / img.height;
-                        const ratio = Math.min(hRatio, vRatio);
-                        const centerShiftX = (600 - img.width * ratio) / 2;
-                        const centerShiftY = (550 - img.height * ratio) / 2;
-
-                        ctx.save();
-                        ctx.shadowColor = 'rgba(0, 0, 0, 0.25)';
-                        ctx.shadowBlur = 25;
-                        ctx.shadowOffsetX = 0;
-                        ctx.shadowOffsetY = 15;
-                        ctx.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, img.width * ratio, img.height * ratio);
-                        ctx.restore();
-
-                        resolve(canvas.toDataURL('image/jpeg', 0.9));
-                    };
-                    img.src = event.target.result;
-                };
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
                 reader.readAsDataURL(file);
             });
         }
 
         window.saveStoreSettings = async function() {
-            storeSettings.storeName = document.getElementById('settingStoreName').value.trim() || "Muhammad Shayan Store";
-            storeSettings.adminPin = document.getElementById('settingAdminPin').value.trim() || "1234";
-            storeSettings.whatsapp = document.getElementById('settingPhone').value.trim();
-            storeSettings.bankName = document.getElementById('settingBankName').value.trim();
-            storeSettings.bankAccount = document.getElementById('settingBankAccount').value.trim();
+            storeSettings.storeName = document.getElementById("settingStoreName").value.trim() || "Muhammad Shayan Store";
+            storeSettings.phone = document.getElementById("settingPhone").value.trim() || "+92 324 4071147";
+            storeSettings.bankName = document.getElementById("settingBankName").value.trim() || "JazzCash";
+            storeSettings.bankAccount = document.getElementById("settingBankAccount").value.trim() || "Muhammad Shayan";
+            storeSettings.adminPin = MASTER_ADMIN_PIN;
 
-            const photoInput = document.getElementById('settingPhotoInput');
-            if (photoInput.files && photoInput.files[0]) {
-                storeSettings.bannerImage = await processImageWithStudioBackground(photoInput.files[0]);
+            const photoFile = document.getElementById("settingPhotoInput").files[0];
+            if (photoFile) {
+                storeSettings.bannerPhoto = await fileToBase64(photoFile);
             }
 
             try {
-                await setDoc(doc(db, "storeSettings", "config"), storeSettings);
-            } catch (e) {
-                console.log("Firebase sync warning:", e);
-            }
+                await setDoc(doc(db, "store_config", "main"), storeSettings);
+            } catch (_) {}
 
-            updateStoreUI();
-            alert("Store settings and custom PIN updated successfully!");
-        }
+            applyStoreSettingsToUI();
+            alert("Store settings saved!");
+        };
+
+        window.generateAiDescription = function() {
+            const name = document.getElementById("adminProdName").value.trim() || "this product";
+            const cat = document.getElementById("adminProdCategory").value.trim() || "General";
+            document.getElementById("adminProdDesc").value =
+                `Premium quality ${name} in ${cat}. Built for reliable everyday performance with durable materials, smooth usability, and fast nationwide delivery from ${storeSettings.storeName}.`;
+        };
 
         window.saveProduct = async function() {
-            const editId = document.getElementById('editProductId').value;
-            const name = document.getElementById('adminProdName').value.trim();
-            const price = parseFloat(document.getElementById('adminProdPrice').value);
-            const category = document.getElementById('adminProdCategory').value.trim();
-            const description = document.getElementById('adminProdDesc').value.trim();
-            const imageInput = document.getElementById('adminProdImageInput');
+            const editId = document.getElementById("editProductId").value;
+            const name = document.getElementById("adminProdName").value.trim();
+            const price = Number(document.getElementById("adminProdPrice").value);
+            const category = document.getElementById("adminProdCategory").value.trim() || "General";
+            const desc = document.getElementById("adminProdDesc").value.trim();
+            const file = document.getElementById("adminProdImageInput").files[0];
 
-            if (!name || isNaN(price) || !category) {
-                alert("Please fill in all required product fields (Name, Price, Category).");
+            if (!name || !price) {
+                alert("Please enter both Product Name and Price.");
                 return;
             }
 
-            let imageUrl = "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&auto=format&fit=crop&q=80";
-            if (imageInput.files && imageInput.files[0]) {
-                imageUrl = await processImageWithStudioBackground(imageInput.files[0]);
+            let imageUrl = "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&auto=format&fit=crop&q=60";
+            if (file) {
+                imageUrl = await fileToBase64(file);
             } else if (editId) {
-                const existing = products.find(p => p.id === editId);
-                if (existing) imageUrl = existing.image;
+                const oldProd = products.find(p => p.id === editId);
+                if (oldProd) imageUrl = oldProd.image;
             }
 
-            const productId = editId || "prod_" + Date.now();
-            const productData = { id: productId, name, price, category, description, image: imageUrl };
+            const id = editId || `prod_${Date.now()}`;
+            const productObj = { id, name, price, category, desc: desc || `${name} - available now.`, image: imageUrl };
 
             try {
-                await setDoc(doc(db, "products", productId), productData);
-            } catch (e) {
-                console.log("Firebase sync warning:", e);
-            }
+                await setDoc(doc(db, "products", id), productObj);
+            } catch (_) {}
 
             if (editId) {
-                const index = products.findIndex(p => p.id === editId);
-                if (index !== -1) products[index] = productData;
+                products = products.map(p => p.id === id ? productObj : p);
             } else {
-                products.unshift(productData);
+                products.unshift(productObj);
             }
 
+            resetProductForm();
             renderProducts();
             renderTicker();
-            resetProductForm();
-            alert("Product saved successfully with studio background enhancement!");
-        }
+            renderAdminTable();
+            updateAnalyticsUI();
+        };
 
         window.editProduct = function(id) {
             const p = products.find(item => item.id === id);
             if (!p) return;
-            document.getElementById('editProductId').value = p.id;
-            document.getElementById('adminProdName').value = p.name;
-            document.getElementById('adminProdPrice').value = p.price;
-            document.getElementById('adminProdCategory').value = p.category;
-            document.getElementById('adminProdDesc').value = p.description;
-            
-            document.getElementById('formHeading').innerHTML = `<i class="fa-solid fa-pen-to-square mr-1 text-orange-500"></i> Edit Product`;
-            document.getElementById('saveProductBtn').innerText = "Update Product";
-            document.getElementById('cancelEditBtn').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.resetProductForm = function() {
-            document.getElementById('editProductId').value = '';
-            document.getElementById('adminProdName').value = '';
-            document.getElementById('adminProdPrice').value = '';
-            document.getElementById('adminProdCategory').value = '';
-            document.getElementById('adminProdDesc').value = '';
-            document.getElementById('adminProdImageInput').value = '';
-            
-            document.getElementById('formHeading').innerHTML = `<i class="fa-solid fa-plus-circle mr-1 text-orange-500"></i> Add New Product`;
-            document.getElementById('saveProductBtn').innerText = "Save Product";
-            document.getElementById('cancelEditBtn').classList.add('hidden');
-        }
+            document.getElementById("formHeading").innerHTML = `<i class="fa-solid fa-pen-to-square mr-1 text-orange-500"></i> Edit Product`;
+            document.getElementById("editProductId").value = p.id;
+            document.getElementById("adminProdName").value = p.name;
+            document.getElementById("adminProdPrice").value = p.price;
+            document.getElementById("adminProdCategory").value = p.category || "";
+            document.getElementById("adminProdDesc").value = p.desc || "";
+            document.getElementById("cancelEditBtn").classList.remove("hidden");
+        };
 
         window.deleteProduct = async function(id) {
-            if (confirm("Are you sure you want to delete this product?")) {
-                try {
-                    await deleteDoc(doc(db, "products", id));
-                } catch (e) {
-                    console.log("Firebase sync warning:", e);
-                }
-                products = products.filter(p => p.id !== id);
-                renderProducts();
-                renderTicker();
-            }
-        }
+            if (!confirm("Delete this product?")) return;
+            try { await deleteDoc(doc(db, "products", id)); } catch (_) {}
+            products = products.filter(p => p.id !== id);
+            renderProducts();
+            renderTicker();
+            renderAdminTable();
+            updateAnalyticsUI();
+        };
+
+        window.resetProductForm = function() {
+            document.getElementById("formHeading").innerHTML = `<i class="fa-solid fa-plus-circle mr-1 text-orange-500"></i> Add New Product`;
+            document.getElementById("editProductId").value = "";
+            document.getElementById("adminProdName").value = "";
+            document.getElementById("adminProdPrice").value = "";
+            document.getElementById("adminProdCategory").value = "";
+            document.getElementById("adminProdDesc").value = "";
+            document.getElementById("adminProdImageInput").value = "";
+            document.getElementById("cancelEditBtn").classList.add("hidden");
+        };
 
         function renderAdminTable() {
-            const tbody = document.getElementById('adminProductTableBody');
-            if (!tbody) return;
+            const tbody = document.getElementById("adminProductTableBody");
             tbody.innerHTML = products.map(p => `
-                <tr class="hover:bg-gray-50">
-                    <td class="p-3"><img src="${p.image}" class="w-10 h-10 object-contain bg-white border rounded"></td>
-                    <td class="p-3 font-semibold text-gray-900">${p.name}</td>
-                    <td class="p-3 text-gray-600">${p.category}</td>
-                    <td class="p-3 text-orange-600 font-bold">Rs. ${p.price.toLocaleString()}</td>
+                <tr>
+                    <td class="p-3"><img src="${p.image}" alt="${p.name}" class="w-10 h-10 object-contain rounded bg-gray-50 p-0.5"></td>
+                    <td class="p-3 font-medium text-gray-900">${p.name}</td>
+                    <td class="p-3 text-gray-600">${p.category || "General"}</td>
+                    <td class="p-3 font-bold text-orange-600">Rs. ${Number(p.price).toLocaleString()}</td>
                     <td class="p-3 text-center space-x-2">
-                        <button onclick="editProduct('${p.id}')" class="bg-blue-50 text-blue-600 hover:bg-blue-100 p-2 rounded transition" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                        <button onclick="deleteProduct('${p.id}')" class="bg-red-50 text-red-600 hover:bg-red-100 p-2 rounded transition" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                        <button onclick="editProduct('${p.id}')" class="text-blue-600 hover:underline font-semibold">Edit</button>
+                        <button onclick="deleteProduct('${p.id}')" class="text-red-600 hover:underline font-semibold">Delete</button>
                     </td>
                 </tr>
-            `).join('');
+            `).join("");
         }
 
-        function showToast(msg) {
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-5 right-5 bg-gray-900 text-white text-xs px-4 py-3 rounded-xl shadow-lg z-50 tab-pane flex items-center space-x-2';
-            toast.innerHTML = `<i class="fa-solid fa-circle-check text-green-400"></i><span>${msg}</span>`;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2500);
+        function updateAnalyticsUI() {
+            document.getElementById("statTotalProducts").innerText = products.length;
+            document.getElementById("statStoreViews").innerText = analyticsData.views.toLocaleString();
+            document.getElementById("statCartClicks").innerText = analyticsData.cartClicks.toLocaleString();
+            const totalVal = products.reduce((sum, p) => sum + Number(p.price || 0), 0);
+            document.getElementById("statTotalValue").innerText = `Rs. ${totalVal.toLocaleString()}`;
         }
 
-        window.addEventListener('click', (e) => {
-            const circle = document.createElement('div');
-            circle.className = 'click-circle';
+        document.addEventListener("click", (e) => {
+            const circle = document.createElement("div");
+            circle.className = "click-circle";
             circle.style.left = `${e.clientX}px`;
             circle.style.top = `${e.clientY}px`;
             document.body.appendChild(circle);
             setTimeout(() => circle.remove(), 500);
         });
+
+        loadStoreData();
     </script>
 </body>
 </html>
